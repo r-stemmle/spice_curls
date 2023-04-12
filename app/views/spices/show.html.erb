@@ -1,10 +1,12 @@
 <p style="color: green"><%= notice %></p>
 
+<h1><%= @spice.user.name %>'s Spice</h1>
+
 <%= render @spice %>
 
 <div>
   <%= link_to "Edit this spice", edit_spice_path(@spice) %> |
-  <%= link_to "Back to spices", user_spices_path %>
+  <%= link_to "Back to spices", user_spices_path(@spice.user) %>
 
   <%= button_to "Destroy this spice", @spice, method: :delete %>
 </div>
