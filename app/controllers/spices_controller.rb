@@ -13,11 +13,7 @@ class SpicesController < ApplicationController
 
   # GET /spices/new
   def new
-    if (user_id = params[:user_id])
-      @spice = User.find(user_id).spices.new
-    else
-      @spice = Spice.new
-    end
+    @spice = User.find(params[:user_id]).spices.new
   end
 
   # GET /spices/1/edit
@@ -26,7 +22,7 @@ class SpicesController < ApplicationController
 
   # POST /spices or /spices.json
   def create
-    @spice = Spice.new(spice_params)
+    @spice = User.find(params[:user_id]).spices.new(spice_params)
 
     respond_to do |format|
       if @spice.save
