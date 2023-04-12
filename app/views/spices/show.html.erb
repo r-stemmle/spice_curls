@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<h1><%= @spice.user.name %>'s Spice</h1>
+<% if @spice.user.name %>
+  <h1><%= @spice.user.name %>'s Spice</h1>
+<% end %>
 
 <%= render @spice %>
 
