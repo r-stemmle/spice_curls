@@ -1,0 +1,37 @@
+<%= form_with(model: spice) do |form| %>
+  <% if spice.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(spice.errors.count, "error") %> prohibited this spice from being saved:</h2>
+
+      <ul>
+        <% spice.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :name, style: "display: block" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :quantity, style: "display: block" %>
+    <%= form.number_field :quantity %>
+  </div>
+
+  <div>
+    <%= form.label :unit, style: "display: block" %>
+    <%= form.text_field :unit %>
+  </div>
+
+  <div>
+    <%= form.label :ground, style: "display: block" %>
+    <%= form.check_box :ground %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
