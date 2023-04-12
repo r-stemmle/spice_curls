@@ -70,6 +70,6 @@ class SpicesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def spice_params
-      params.require(:spice).permit(:name, :quantity, :unit, :ground)
+      params.require(:spice).permit(:name, :quantity, :unit, :ground, :user)
     end
 end
