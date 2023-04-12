@@ -11,7 +11,7 @@
         <%= link_to "Show this spice", spice %>
       </p>
     <% end %>
-    <%= link_to "New spice for #{user.name}", new_spice_path(user_id: user.id) %>
+    <%= link_to "New spice for #{user.name}", new_user_spice_path(user) %>
   <% end %>
 </div>
 
@@ -29,6 +29,5 @@
     </p>
   <% end %>
 </div>
-<%= link_to "New spice", new_spice_path %>
 
 </section>

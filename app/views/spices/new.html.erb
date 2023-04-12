@@ -1,9 +1,9 @@
-<h1>New spice</h1>
+<h1>New spice for <%= @spice.user.name %></h1>
 
 <%= render "form", spice: @spice %>
 
 <br>
 
 <div>
-  <%= link_to "Back to spices", spices_path %>
+  <%= link_to "Back to spices", user_spices_path(@spice.user) %>
 </div>
