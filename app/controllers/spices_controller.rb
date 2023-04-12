@@ -3,6 +3,7 @@ class SpicesController < ApplicationController
 
   # GET /spices or /spices.json
   def index
+    @users = User.all
     @spices = Spice.all
   end
 
@@ -12,7 +13,11 @@ class SpicesController < ApplicationController
 
   # GET /spices/new
   def new
-    @spice = Spice.new
+    if (user_id = params[:user_id])
+      @spice = User.find(user_id).spices.new
+    else
+      @spice = Spice.new
+    end
   end
 
   # GET /spices/1/edit
